@@ -6,6 +6,8 @@ def count_a(sentence):
 	for i in range(len(sentence) - 1):
 		if i == 'a':
 			total += 1
+		if letter == 'a' or letter == "A":
+			total += 1
 	return total
 
 
