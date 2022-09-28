@@ -4,8 +4,7 @@ import unittest
 def count_a(sentence):
 	total = 0
 	for i in range(len(sentence) - 1):
-		if i == 'a':
-			total += 1
+		letter = sentence[i]
 		if letter == 'a' or letter == "A":
 			total += 1
 	return total
@@ -40,15 +39,20 @@ class Warehouse:
 
 	# Adds an item to the warehouse	
 	def add_item(self, item):
-		pass
+		self.items.append(item)
 
-	# Returns the item in the warehouse with the most stock		
+	# Returns the item in the warehouse with the most stock	
 	def get_max_stock(self):
-		pass
+		items_stock = [i.stock for  i in self.items]
+		max_index = items_stock.index(max(items_stock))
+		return self.items[max_index]
 	
 	# Returns the item in the warehouse with the highest price
 	def get_max_price(self):
-		pass	
+		items_price = [i.price for  i in self.items]
+		max_index = items_price.index(max(items_price))
+		return self.items[max_index]
+
 
 
 
